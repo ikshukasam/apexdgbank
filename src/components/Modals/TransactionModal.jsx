@@ -1,0 +1,4 @@
+import React from 'react';
+import Modal from './Modal';
+import {money} from '../../lib/utils';
+export default function TransactionModal({tx,onClose}){return <Modal title="Transaction details" onClose={onClose}><div className="rounded-2xl bg-slate-50 p-5"><p className="text-sm font-bold">{tx.title}</p><p className="mt-1 text-xs text-slate-400">{tx.date} · {tx.category}</p><p className={tx.amount>0?'mt-6 text-3xl font-bold text-emerald-600':'mt-6 text-3xl font-bold text-[#d91424]'}>{tx.amount>0?'+':'-'}{money(tx.amount)} AED</p></div><div className="mt-4 grid grid-cols-2 gap-3">{[['Status',tx.status],['Reference',tx.ref]].map(x=><div key={x[0]} className="rounded-2xl border p-4"><p className="text-[11px] text-slate-400">{x[0]}</p><p className="mt-1 text-sm font-bold">{x[1]}</p></div>)}</div></Modal>}

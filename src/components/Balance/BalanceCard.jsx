@@ -1,0 +1,4 @@
+import React from 'react';
+import {Eye,EyeOff,TrendingUp} from 'lucide-react';
+import {money,cx} from '../../lib/utils';
+export default function BalanceCard({total,hidden,setHidden}){return <div className="apex-gradient overflow-hidden rounded-[28px] p-6 text-white shadow-xl shadow-red-100 sm:p-7"><div className="flex items-start justify-between"><div><p className="text-sm text-white/70">Total available balance</p><div className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">{hidden?'••••••':`${money(total)} AED`}</div></div><button onClick={()=>setHidden(v=>!v)} className="rounded-xl bg-white/10 p-2 hover:bg-white/15">{hidden?<Eye size={18}/>:<EyeOff size={18}/>}</button></div><div className="mt-7 flex items-center justify-between text-xs"><span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5"><TrendingUp size={14}/> +8.4% this month</span><span className="text-white/60">2 active accounts</span></div></div>}

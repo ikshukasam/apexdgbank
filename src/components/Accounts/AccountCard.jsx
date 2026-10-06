@@ -1,0 +1,4 @@
+import React from 'react';
+import {ArrowRight,Landmark} from 'lucide-react';
+import {money} from '../../lib/utils';
+export default function AccountCard({account,onOpen}){return <button onClick={()=>onOpen(account)} className="w-full rounded-[24px] border border-slate-100 bg-white p-5 text-left card-shadow transition hover:-translate-y-0.5 hover:border-red-100"><div className="flex items-start justify-between"><div className="grid h-11 w-11 place-items-center rounded-2xl bg-slate-100 text-slate-700"><Landmark size={19}/></div><ArrowRight size={17} className="text-slate-400"/></div><p className="mt-5 text-sm font-bold">{account.name}</p><p className="mt-1 text-xs text-slate-400">{account.number} · {account.type}</p><p className="mt-5 text-xl font-bold">{money(account.balance)} <span className="text-xs font-semibold text-slate-400">{account.currency}</span></p></button>}

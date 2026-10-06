@@ -1,0 +1,4 @@
+import React from 'react';
+import {Download} from 'lucide-react';
+import {money} from '../../lib/utils';
+export default function AccountDetails({account,onClose,onDownload}){return <div><div className="rounded-2xl bg-slate-50 p-5"><p className="text-xs text-slate-400">{account.type} account</p><p className="mt-2 text-2xl font-bold">{money(account.balance)} {account.currency}</p><p className="mt-1 text-sm text-slate-500">{account.name} · {account.number}</p></div><div className="mt-4 grid gap-3 sm:grid-cols-2"><button onClick={onDownload} className="rounded-2xl border p-4 text-left text-sm font-bold hover:bg-slate-50"><Download size={17} className="mb-2"/>Download statement</button><button onClick={onClose} className="rounded-2xl border p-4 text-left text-sm font-bold hover:bg-slate-50">Close account details</button></div></div>}
